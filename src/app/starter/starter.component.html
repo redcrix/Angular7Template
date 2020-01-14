@@ -1,0 +1,180 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+
+            <div class="card-body">
+                    <h2> Add Featured Products</h2>
+                    <div class="container">
+
+                   
+
+                   
+                            <form (ngSubmit)="onSubmit()">
+                              <div>
+                                <label for="title">Title</label>
+                                <input type="text" [(ngModel)]="newList.title" name="title" required>
+                              </div>
+                              <div>
+                                    <label for="title">subtitle</label>
+                                    <input type="text" [(ngModel)]="newList.subtitle" name="subtitle" >
+                              </div>
+                              <div>
+                                  <label for="title">image1</label>
+                                  <input type="file" (change)="onFileSelected($event)" [(ngModel)]="newList.photo" name="photo" >
+                            </div>
+                           
+                         
+
+
+                           
+                            
+                            <!-- ---- -->
+                      
+                        
+                              <div>
+                                <label for="description">description</label>
+                                <input type="text" [(ngModel)]="newList.description" name="description" >
+                              </div>
+                              <div>
+                                <label for="description">des1</label>
+                                <input type="text" [(ngModel)]="newList.des1" name="des1" >
+                              </div>
+                              <div>
+                                <label for="description">des2</label>
+                                <input type="text" [(ngModel)]="newList.des2" name="des2" >
+                              </div>
+                              <div>
+                                <label for="description">price</label>
+                                <input type="text" [(ngModel)]="newList.price" name="price" >
+                              </div>
+                              <div>
+                                <label for="description">link</label>
+                                <input type="text" [(ngModel)]="newList.link" name="link" >
+                              </div>
+                              <div>
+                                <label for="description">link2</label>
+                                <input type="text" [(ngModel)]="newList.link2" name="link2" >
+                              </div>
+                        
+                              <button type="submit">Submit</button>
+                        
+                            </form>
+                    </div>
+            </div>
+            <div class="card-body">
+                    <h2> Show Feedback </h2>
+
+                    <!-- Table starts here -->
+                    <table id="table">
+                        <thead>
+                          <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Message</th>
+                            <th> Service Choose </th>
+                  
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let list of lists">
+                            <td>{{list.username}}</td>
+                            <td>{{list.email}}</td>
+                            <td>{{list.message}}</td>
+                            <td> {{list.chose}}</td>
+                  
+                          </tr>
+                        </tbody>
+                     </table>
+                
+            </div>
+            <div class="card-body">
+                    <h2> Add Blog </h2>
+
+                    <div class="container">
+
+                            <form (ngSubmit)="onSubmit_Blog()">
+                              <div>
+                                <label for="title">Title</label>
+                                <input type="text" [(ngModel)]="newBlog.title" name="title" required>
+                              </div>
+                              <div>
+                                    <label for="title">subtitle</label>
+                                    <input type="text" [(ngModel)]="newBlog.subtitle" name="subtitle" required>
+                              </div>
+                              <div>
+                                    <label for="image1">image1</label>
+                                    <input type="text" [(ngModel)]="newBlog.image1" name="image1" required>
+                                  </div>
+                          
+                              <div>
+                                <label for="image1">image1</label>
+                                <input type="text" [(ngModel)]="newBlog.image2" name="image2" required>
+                              </div>
+                              <div>
+                                    <label for="image1">description</label>
+                                    <input type="text" [(ngModel)]="newBlog.description" name="description" required>
+                                </div>
+                                <div>
+                                        <label for="image1">blogType</label>
+                                        <input type="text" [(ngModel)]="newBlog.blogType" name="blogType" required>
+                                    </div>
+                              <button type="submit">Submit</button>
+                        
+                            </form>
+                    </div>
+            </div>
+
+            <div class="card-body">
+                    <h2> Show Blog </h2>
+
+                    <!-- Table starts here -->
+                    <table id="table">
+                        <thead>
+                          <tr>
+                            <th>title</th>
+                            <th>subtitle</th>
+                            <th>image1</th>
+                            <th>image2</th>
+                            <th>description</th>
+                            <th>blogType</th>
+                  
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let list of blogs">
+                            <td>{{list.title}}</td>
+                            <td>{{list.subtitle}}</td>
+                            <td>{{list.image1}}</td>
+                            <td>{{list.image2}}</td>
+                            <td>{{list.description}}</td>
+                            <td>{{list.blogType}}</td>
+                            <td> <button type="button" (click)="deleteList(list); $event.stopPropagation();">Delete</button></td>
+                  
+                          </tr>
+                        </tbody>
+                     </table>
+                
+            </div>
+            <div class="card-body">
+                    <h2> Send Email </h2>
+
+                    <div class="container">
+
+                            <form (ngSubmit)="sendEmail()">
+                              <div>
+                                <label for="title">To</label>
+                                <input type="text" [(ngModel)]="email_to.to" name="to" required>
+                              </div>
+                              <div>
+                                    <label for="title">Text</label>
+                                    <input type="text" [(ngModel)]="email_to.text" name="text" required>
+                              </div>
+                     
+                              <button type="submit">Submit</button>
+                        
+                            </form>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
